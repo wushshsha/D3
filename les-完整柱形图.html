@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>完整柱形图</title>
+    <script src='d3.js'></script>
+</head>
+<body>
+<script>
+    //定义画布的宽高
+    var width = 400;
+    var height = 400;
+    //添加一个svg画布
+    var svg = d3.select('body').append('svg').attr('width',width).attr('height',heigth);
+    //定义画布的边界
+    var padding = {left:30,right:30,top:30,bottom:30};
+    //定义数组
+    var dataset = [];
+    for(let i = 0;i<8;i++){
+        dataset.push(Math.random(0,100));
+    }
+    //x坐标轴比例尺
+    var xScale = d3.scaleOrdianl()
+                   .domain(d3.range(dataset.length))
+                   .rangeRoundBands([0,width-padding.left-padding.right]);
+</script>
+</body>
+</html>
